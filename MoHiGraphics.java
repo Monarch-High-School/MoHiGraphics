@@ -10,8 +10,6 @@
  * @since 0.1
  */
 
-package org.bvsd.mohi;
-
 import java.awt.*;
 import org.jfree.svg.*;
 import java.io.FileWriter;
