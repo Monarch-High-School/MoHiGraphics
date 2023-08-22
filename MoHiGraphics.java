@@ -1,5 +1,5 @@
 /**
- * Graphics
+ * MoHiGraphics
  * This class is intended for beginning Java programming students
  * who would like to engage in simple graphics programming. It 
  * provides more explicit methods and more intuitive parameters
@@ -17,7 +17,7 @@ import org.jfree.svg.*;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class Graphics {
+public class MoHiGraphics {
 
   /** instance of JFree's SVG Graphics library **/
   private SVGGraphics2D svgGraphics;
@@ -28,7 +28,7 @@ public class Graphics {
    * @param width The width of the image in pixels
    * @param height The height of the image in pixels
    */
-  public Graphics(double width, double height) {
+  public MoHiGraphics(double width, double height) {
       // set up svggraphics object
     svgGraphics = new SVGGraphics2D(width, height);
 
