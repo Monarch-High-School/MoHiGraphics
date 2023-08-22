@@ -18,7 +18,7 @@ In your code, add
 import org.bvsd.mohi.*;
 ```
 ## Testing
-To test the methods, create an instance of `MoHiGraphicsTester` and call the `.test()` method to generate a series of shape files.
+The `MoHiGraphicsTester` class contains an executable `main()` method that will call each of the methods and save an appropriate SVG file to a folder called `testoutput`.
 
 ## Team Members
 - Stephen Buch
