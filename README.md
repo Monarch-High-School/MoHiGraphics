@@ -1,6 +1,7 @@
 # MoHi Graphics
 
 Version 0.1 - Monarch High School, Coding Capstone Class, 2023-2024
+
 © August-September 2023
 
 ## Overview
