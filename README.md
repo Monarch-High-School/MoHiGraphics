@@ -1,8 +1,8 @@
 # MoHi Graphics
 
-Version 0.1 - Monarch High School Coding Capstone Class 2023-2024
-(c) August-September 2023
-a
+Version 0.1 - Monarch High School, Coding Capstone Class, 2023-2024
+© August-September 2023
+
 ## Overview
 This Java class was developed for introductory AP Computer Science A students to start a first project in graphics programming without having to learn the nuances of the AWT library. The goal is to expose an easier to use set of methods that will generate simple shapes in a more intuitive way. 
 
@@ -17,7 +17,7 @@ In your code, add
 import org.bvsd.mohi.*;
 ```
 ## Testing
-To test the methods create an instance of `MoHiGraphicsTester` and call the `.test()` method to generate a series of shape files.
+To test the methods, create an instance of `MoHiGraphicsTester` and call the `.test()` method to generate a series of shape files.
 
 ## Team Members
 - Stephen Buch
