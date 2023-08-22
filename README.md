@@ -10,7 +10,10 @@ This Java class was developed for introductory AP Computer Science A students to
 The class utilizes JFree organization's SVG library so that the output can be in raster instead of vector format.
 
 ## Dependencies, Building, and Usage
-This library is intended to be compiled and the resulting `.class` file added in your classpath for your project. There is no `.jar` to distribute.
+This library is intended to be compiled and the resulting `.class` file is intended to be packaged as a jar file using the command:
+```sh
+jar cf MoHiGraphics.jar MoHiGraphics.class
+```
 
 ### Dependencies
 Before building, the [JFree SVG library](org.jfree.svg-5.0.5.jar) should be downloaded as a `.jar` file and added to the classpath. 
