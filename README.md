@@ -9,14 +9,23 @@ This Java class was developed for introductory AP Computer Science A students to
 
 The class utilizes JFree organization's SVG library so that the output can be in raster instead of vector format.
 
-## Building and Usage
-We did not use a traditional project file structure in this repo. 
-To build the `.jar` file, just run the `build.sh` file from the command line.
-Make sure to drop the `.jar` file in your classpath.
-In your code, add
+## Dependencies, Building, and Usage
+This library is intended to be compiled and the resulting `.class` file added in your classpath for your project. There is no `.jar` to distribute.
+
+### Dependencies
+Before building, the [JFree SVG library](org.jfree.svg-5.0.5.jar) should be downloaded as a `.jar` file and added to the classpath. 
+
+### Build
+To build the library, use the command
+`javac MoHiGraphics.java`
+
+### Usage
+When added to the classpath, no import statement should be needed. The object can be instantiated with: 
 ```java
-import org.bvsd.mohi.*;
-```
+MoHiGraphics graphics = new MoHiGraphics(100, 100);
+``` 
+where the arguments to the constructor are the width and height of the image.
+
 ## Testing
 The `MoHiGraphicsTester` class contains an executable `main()` method that will call each of the methods and save an appropriate SVG file to a folder called `testoutput`.
 
