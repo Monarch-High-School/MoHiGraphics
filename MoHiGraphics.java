@@ -35,7 +35,7 @@ public class MoHiGraphics {
   }
 
   /** 
-   * Draws a circle with center at centerX, centerX with radius.
+   * Draws a circle with center at (centerX, centerY) with radius.
    * @param centerX the x coordinate of the center
    * @param centerY the y coordinate of the center
    * @param radius the radius of the circle
