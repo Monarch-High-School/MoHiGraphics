@@ -48,7 +48,13 @@ public class MoHiGraphics {
   public void drawOval(int centerX, int centerY, int width, int height) {
     
   }
-
+  
+  /** 
+   * Draws a square with upper left corner at (leftTopX, leftTopY) with size.
+   * @param leftTopX the x coordinate of the upper left corner
+   * @param leftTopY the y coordinate of the upper left corner
+   * @param size the size of the square
+   */
   public void drawSquare (int leftTopX, int leftTopY, int size) {
     int[] xCoords = new int[] {leftTopX, leftTopX+size, leftTopX+size, leftTopX};
     int[] yCoords = new int[] {leftTopY, leftTopY, leftTopY+size, leftTopY+size};
