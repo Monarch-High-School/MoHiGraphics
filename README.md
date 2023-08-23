@@ -16,7 +16,7 @@ jar cf MoHiGraphics.jar MoHiGraphics.class
 ```
 
 ### Dependencies
-Before building, the [JFree SVG library](org.jfree.svg-5.0.5.jar) should be downloaded as a `.jar` file and added to the classpath. 
+Before building, the [JFree SVG library](https://www.jfree.org/jfreesvg/) (Download link) should be downloaded as a `.jar` file and added to the classpath. 
 
 ### Build
 To build the library, use the command
