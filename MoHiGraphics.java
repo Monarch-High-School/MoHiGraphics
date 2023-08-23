@@ -41,7 +41,7 @@ public class MoHiGraphics {
    * @param radius the radius of the circle
    */
   public void drawCircle(int centerX, int centerY, int radius) {
-    svgGraphics.drawOval(centerX-(radius/2), centerY-(radius/2), radius, radius);
+    svgGraphics.drawOval(centerX-radius, centerY-radius, radius*2, radius*2);
   }
 
 
