@@ -66,12 +66,22 @@ public class MoHiGraphics {
     
   }
   
-  public void drawEqTriangle() {
+  public void drawTriangle() {
     
   }
   
-  public void drawTriangle() {
-    
+  /**
+ * @param x1 the x coordinate of the first point on the triangle
+ * @param y1 the y coordinate of the first point on the triangle
+ * @param x2 the x coordinate of the second point on the triangle
+ * @param y2 the y coordinate of the second point on the triangle
+ * @param x3 the x coordinate of the third point on the triangle
+ * @param y3 the y coordinate of the third point on the triangle
+ */
+  public void drawIrregularTriangle(int x1, int y1, int x2, int y2, int x3, int y3) {
+    int[] xCoords = new int[] {x1,x2,x3};
+    int[] yCoords = new int[] {y1,y2,y3};
+    svgGraphics.drawPolygon(xCoords,yCoords,3);
   }
 
   public void drawPentagon() {
