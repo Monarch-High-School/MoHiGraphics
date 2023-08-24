@@ -45,9 +45,18 @@ public class MoHiGraphics {
   }
 
 
+  /**
+ 	 * Draws a oval with center at centerX,centerX with width
+	 * @param centerX the x coordinate of the center
+	 * @param centerY the y coordinate of the center
+	 * @param width the width of the oval
+	 * @param height the height of the oval
+	**/
+
   public void drawOval(int centerX, int centerY, int width, int height) {
-    
+    svgGraphics.drawOval(centerX-(width/2),centerY-(height/2),width,height);
   }
+
   
   /** 
    * Draws a square with upper left corner at (leftTopX, leftTopY) with size.
@@ -63,15 +72,15 @@ public class MoHiGraphics {
   }
 
   public void drawRectangle(int leftTopX, int leftTopY, int width, int height) {
-    
+   
   }
+
   
   public void drawEqTriangle() {
     
   }
-  
-  public void drawTriangle() {
-    
+
+	public void drawTriangle() {
   }
 
   public void drawPentagon() {
