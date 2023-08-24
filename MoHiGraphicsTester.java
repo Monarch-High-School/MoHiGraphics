@@ -22,8 +22,10 @@ class MoHiGraphicsTester {
     graphics.saveToFile("testoutput/circle.svg");
 
       // test oval
-    
-    
+    graphics = new MoHiGraphics(200,200);
+		graphics.drawOval(50,50,50,100);
+    graphics.saveToFile("testoutput/oval.svg");
+		
       // test square
     graphics = new MoHiGraphics(200, 200);
     graphics.drawSquare(50, 50, 100);
@@ -31,7 +33,7 @@ class MoHiGraphicsTester {
 
 
       // test rectangle
-
+		
 
       // test equilateral triangle
 
