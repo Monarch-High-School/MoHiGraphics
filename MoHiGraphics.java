@@ -77,11 +77,25 @@ public class MoHiGraphics {
   public void drawPentagon() {
     
   }
-  
-  public void drawHexagon() {
-    
+  /*
+  * Draws a regular hexagon: so, the shape has 6 equal sides and 6 
+  * interior angles, each with a measure of 120 degrees
+  * @param centerX, the x-coordinate of the center of the hexagon
+  * @param centerY, the y-coordinate of the center of the hexagon
+  * @param distToVertex, the length of the line from the center to 
+  * any vertex/corner of the hexagon
+  * With the distance to a corner and the Math class built into 
+  * Java, the x and y values for all six vertices of the hexagon can 
+  * be calculated, and so the method can draw a regular hexagon
+  */
+  public void drawHexagon(int centerX, int centerY, int distToVertex) 
+  {
+    int valY = (int) (distToVertex /2);
+    int valX = (int)(distToVertex * Math.cos(Math.PI/6));
+    int [] xPts = new int[] {centerX - valX, centerX,centerX + valX, centerX + valX, centerX, centerX - valX};
+    int [] yPts = new int[] {centerY - valY, centerY - 2*valY, centerY - valY, centerY + valY, centerY + 2*valY, centerY + valY};
+    svgGraphics.drawPolygon(xPts, yPts, 6);
   }
-
   public void drawOctagon() {
     
   }
