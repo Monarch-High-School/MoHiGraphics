@@ -99,7 +99,8 @@ public class MoHiGraphics {
   public void drawPentagon() {
     
   }
-  /*
+
+ /**
   * Draws a regular hexagon: so, the shape has 6 equal sides and 6 
   * interior angles, each with a measure of 120 degrees
   * @param centerX, the x-coordinate of the center of the hexagon
@@ -118,6 +119,7 @@ public class MoHiGraphics {
     int [] yPts = new int[] {centerY - valY, centerY - 2*valY, centerY - valY, centerY + valY, centerY + 2*valY, centerY + valY};
     svgGraphics.drawPolygon(xPts, yPts, 6);
   }
+
   public void drawOctagon() {
     
   }
