@@ -46,7 +46,9 @@ class MoHiGraphicsTester {
     // test pentagon
 
     // test hexagon
-
+    graphics = new MoHiGraphics(200,200);
+    graphics.drawHexagon(100,100,50);
+    graphics.saveToFile("testoutput/hexagon.svg");
     // test octagon
 
     // test transparency change
