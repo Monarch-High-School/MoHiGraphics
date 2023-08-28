@@ -120,6 +120,11 @@ public class MoHiGraphics {
     svgGraphics.drawPolygon(xPts, yPts, 6);
   }
 
+   public void arc(int x, int y, int width, int height, int startAngle, int arcAngle)
+  {
+    svgGraphics.drawArc(x,y,width,height,startAngle,arcAngle);
+  }
+  
   public void drawOctagon() {
     
   }
