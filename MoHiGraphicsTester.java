@@ -26,7 +26,7 @@ class MoHiGraphicsTester {
     
       // test square
     graphics = new MoHiGraphics(200, 200);
-    graphics.drawSquare(50, 50, 100);
+    graphics.drawSquare(50, 50, 50);
     graphics.saveToFile("testoutput/square.svg");
 
 
@@ -35,9 +35,16 @@ class MoHiGraphicsTester {
 
       // test equilateral triangle
 
+     graphics = new MoHiGraphics(200, 200);
+    graphics.drawTriangle(50, 50, 50);
+    graphics.saveToFile("testoutput/EqTriangle.svg");
+
 
       // test triangle
 
+    //graphics = new MoHiGraphics(200, 200);
+   // graphics.drawTriangle();
+   // graphics.saveToFile("testoutput/triangle.svg");
 
       // test pentagon
 

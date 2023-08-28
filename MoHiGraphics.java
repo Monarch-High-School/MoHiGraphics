@@ -15,6 +15,8 @@ import org.jfree.svg.*;
 import java.io.FileWriter;
 import java.io.IOException;
 
+
+
 public class MoHiGraphics {
 
   /** instance of JFree's SVG Graphics library **/
@@ -55,22 +57,31 @@ public class MoHiGraphics {
    * @param leftTopY the y coordinate of the upper left corner
    * @param size the size of the square
    */
-  public void drawSquare (int leftTopX, int leftTopY, int size) {
-    int[] xCoords = new int[] {leftTopX, leftTopX+size, leftTopX+size, leftTopX};
-    int[] yCoords = new int[] {leftTopY, leftTopY, leftTopY+size, leftTopY+size};
+  public void drawSquare (int x, int y, int size) {
+
+
     
-    svgGraphics.drawPolygon(xCoords, yCoords, 4);
+    
+    
   }
 
   public void drawRectangle(int leftTopX, int leftTopY, int width, int height) {
     
   }
   
-  public void drawEqTriangle() {
+  public void drawTriangle(int x, int y, int size) {
+
+      
+ int[] xCoords = new int[] {x-size/2, x+size/2 , x};
+ int[] yCoords = new int[] {(int)((size/2)/Math.sqrt(3)) + y, (int)((size/2)/Math.sqrt(3)) + y, (int)( y - (2*( (size/2) / (Math.sqrt(3) )))  ) };
+
+
     
+    svgGraphics.drawPolygon(xCoords, yCoords, 3);
+
   }
   
-  public void drawTriangle() {
+  public void drawIreggTriangle() {
     
   }
 
