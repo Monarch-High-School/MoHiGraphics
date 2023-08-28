@@ -49,6 +49,12 @@ class MoHiGraphicsTester {
     graphics = new MoHiGraphics(200,200);
     graphics.drawHexagon(100,100,50);
     graphics.saveToFile("testoutput/hexagon.svg");
+
+    //test arc method
+    graphics = new MoHiGraphics(200,200);
+    graphics.arc(100,100,50,50,0,30);
+    graphics.saveToFile("testoutput/arc.svg");
+    
     // test octagon
 
     // test transparency change
