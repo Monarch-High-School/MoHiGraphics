@@ -96,8 +96,23 @@ public class MoHiGraphics {
 
   }
 
-  public void drawPentagon() {
-    
+ public void drawPentagon(int centerX, int centerY, int radius) {
+    //intialize an array that contains 5 x values at the vertices of the pentagon
+    int[] pointsX = new int[5];
+    //intialize an array that contains 5 y values at the vertices of the pentagon
+    int[] pointsY = new int[5];
+   //setting first point at (xcenter+radius, ycenter)
+    pointsX[0] = centerX + radius;
+    pointsY[0] = centerY;
+  for(int i = 1; i < 5; i++)
+    {
+      //math to find vertices using center and radius
+      double xangle = Math.cos(2 * Math.PI * i/5);
+      double yangle = Math.sin(2 * Math.PI * i/5);
+      pointsX[i] = (int) (xangle * radius) + centerX;
+      pointsY[i] = (int) (yangle * radius) + centerY;
+    }
+    svgGraphics.drawPolygon(pointsX, pointsY, 5);
   }
 
  /**

@@ -44,7 +44,10 @@ class MoHiGraphicsTester {
     graphics.saveToFile("testoutput/irregularTriangle.svg");
 
     // test pentagon
-
+    graphics = new MoHiGraphics(200, 200);
+    graphics.drawPentagon(100, 100, 50);
+    graphics.saveToFile("testoutput/pentagon.svg");
+    )
     // test hexagon
     graphics = new MoHiGraphics(200,200);
     graphics.drawHexagon(100,100,50);
