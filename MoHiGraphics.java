@@ -91,15 +91,15 @@ public class MoHiGraphics {
     
   }
 
-  
-/**
- * @param x1 the x coordinate of the first point on the triangle
- * @param y1 the y coordinate of the first point on the triangle
- * @param x2 the x coordinate of the second point on the triangle
- * @param y2 the y coordinate of the second point on the triangle
- * @param x3 the x coordinate of the third point on the triangle
- * @param y3 the y coordinate of the third point on the triangle
- */
+ /**
+  * Draws a triangle with vertices at (x1,y1), (x2,y2), and (x3,y3)
+  * @param x1 the x coordinate of the first point on the triangle
+  * @param y1 the y coordinate of the first point on the triangle
+  * @param x2 the x coordinate of the second point on the triangle
+  * @param y2 the y coordinate of the second point on the triangle
+  * @param x3 the x coordinate of the third point on the triangle
+  * @param y3 the y coordinate of the third point on the triangle
+  */
   public void drawIrregularTriangle(int x1, int y1, int x2, int y2, int x3, int y3) {
     int[] xCoords = new int[] {x1,x2,x3};
     int[] yCoords = new int[] {y1,y2,y3};
