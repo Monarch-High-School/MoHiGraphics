@@ -33,8 +33,10 @@ class MoHiGraphicsTester {
     graphics.drawSquare(50, 50, 100);
     graphics.saveToFile("testoutput/square.svg");
 
-    // test rectangle
-
+      // test rectangle
+    graphics = new MoHiGraphics(200, 200);
+    graphics.drawRectangle(50, 50, 100, 50);
+    graphics.saveToFile("testoutput/rectangle.svg");
 
     // test triangle
 
@@ -44,16 +46,38 @@ class MoHiGraphicsTester {
     graphics.saveToFile("testoutput/irregularTriangle.svg");
 
     // test pentagon
-
+    graphics = new MoHiGraphics(200, 200);
+    graphics.drawPentagon(100, 100, 50);
+    graphics.saveToFile("testoutput/pentagon.svg");
+    
     // test hexagon
     graphics = new MoHiGraphics(200,200);
     graphics.drawHexagon(100,100,50);
     graphics.saveToFile("testoutput/hexagon.svg");
+
+    //test arc method
+    graphics = new MoHiGraphics(200,200);
+    graphics.arc(100,100,50,50,0,30);
+    graphics.saveToFile("testoutput/arc.svg");
+    
     // test octagon
 
     // test transparency change
 
     // test line size change
+      graphics = new MoHiGraphics(200,200);
+      graphics.setLineSize(20);
+      graphics.drawSquare(50, 50, 100);
+      graphics.saveToFile("testoutput/strokeSquare.svg");
+
+    // test rotate
+    graphics = new MoHiGraphics(200, 200);
+    graphics.drawSquare(50, 50, 100);
+    graphics.rotate(45);
+    graphics.drawSquare(50, 50, 100);
+    graphics.rotate(-25);
+    graphics.drawSquare(50, 50, 100);
+    graphics.saveToFile("testoutput/rotate.svg");
 
   }
 }

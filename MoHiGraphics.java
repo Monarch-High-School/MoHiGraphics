@@ -14,6 +14,7 @@ import java.awt.*;
 import org.jfree.svg.*;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.awt.geom.AffineTransform;
 
 public class MoHiGraphics {
 
@@ -71,8 +72,18 @@ public class MoHiGraphics {
     svgGraphics.drawPolygon(xCoords, yCoords, 4);
   }
 
+  /** 
+   * Draws a rectangle with the top left corner at leftTopX, rightTopX with width and height.
+   * @param leftTopX the x coordinate of the top left corner of the rectangle
+   * @param leftTopY the y coordinate of the top left corner of the rectangle
+   * @param width the width of the rectangle
+   * @param height the height of the rectangle
+   */
   public void drawRectangle(int leftTopX, int leftTopY, int width, int height) {
-   
+    int[] xCoords = new int[]{leftTopX, leftTopX+width, leftTopX+width, leftTopX};
+    int[] yCoords = new int[]{leftTopY, leftTopY, leftTopY+height, leftTopY+height};
+
+    svgGraphics.drawPolygon(xCoords, yCoords, 4);
   }
 
   
@@ -80,8 +91,7 @@ public class MoHiGraphics {
     
   }
 
-  
-  /**
+ /**
   * Draws a triangle with vertices at (x1,y1), (x2,y2), and (x3,y3)
   * @param x1 the x coordinate of the first point on the triangle
   * @param y1 the y coordinate of the first point on the triangle
@@ -96,9 +106,34 @@ public class MoHiGraphics {
     svgGraphics.drawPolygon(xCoords,yCoords,3);
 
   }
-
-  public void drawPentagon() {
-    
+  /**
+  * Draws a regular pentagon: so, the shape has 5 equal sides and 5 
+  * interior angles, each with a measure of 72 degrees
+  * @param centerX, the x-coordinate of the center of the pentagon
+  * @param centerY, the y-coordinate of the center of the pentagon
+  * @param radius, the length of the line from the center to 
+  * any point on the perimeter of the pentagon
+  * With the radius and the Math class built into 
+  * Java, the x and y values for all five vertices of the pentagon 
+  * is calculated using trig to draw a pentagon
+  */  
+ public void drawPentagon(int centerX, int centerY, int radius) {
+    //intialize an array that contains 5 x values at the vertices of the pentagon
+    int[] pointsX = new int[5];
+    //intialize an array that contains 5 y values at the vertices of the pentagon
+    int[] pointsY = new int[5];
+   //setting first point at (xcenter+radius, ycenter)
+    pointsX[0] = centerX + radius;
+    pointsY[0] = centerY;
+  for(int i = 1; i < 5; i++)
+    {
+      //math to find vertices using center and radius
+      double xangle = Math.cos(2 * Math.PI * i/5);
+      double yangle = Math.sin(2 * Math.PI * i/5);
+      pointsX[i] = (int) (xangle * radius) + centerX;
+      pointsY[i] = (int) (yangle * radius) + centerY;
+    }
+    svgGraphics.drawPolygon(pointsX, pointsY, 5);
   }
 
  /**
@@ -121,6 +156,11 @@ public class MoHiGraphics {
     svgGraphics.drawPolygon(xPts, yPts, 6);
   }
 
+   public void arc(int x, int y, int width, int height, int startAngle, int arcAngle)
+  {
+    svgGraphics.drawArc(x,y,width,height,startAngle,arcAngle);
+  }
+  
   public void drawOctagon() {
     
   }
@@ -128,10 +168,27 @@ public class MoHiGraphics {
   public void setTransparent(boolean transparent) {
 
   }
-  
+ 
+ /**
+   * Sets the stroke thickness
+   * @param size size of stroke in pixels.
+   */
   public void setLineSize(int size) {
-    
+    svgGraphics.setStroke(new BasicStroke((float)size));
   } 
+
+  /** 
+   * Rotates the canvas by (degree).
+   * Positive degree rotates canvas clockwise 
+   * Negative degree rotates canvas anticlockwise
+   * @param degree rotates the canvas by degrees
+   */
+
+  public void rotate(int degree)
+  {
+    AffineTransform rotation = AffineTransform.getRotateInstance(Math.toRadians(degree),svgGraphics.getWidth()/2,svgGraphics.getHeight()/2);
+    svgGraphics.transform(rotation);
+  }
   
   /**
    * Overlays a grid in reflex blue color.
