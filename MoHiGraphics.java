@@ -14,12 +14,14 @@ import java.awt.*;
 import org.jfree.svg.*;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.awt.geom.AffineTransform;
 
 public class MoHiGraphics {
 
   /** instance of JFree's SVG Graphics library **/
   private SVGGraphics2D svgGraphics;
-
+  private double w;
+  private double h;
   /**
    * Creates a new MoHiGraphics object.
    *
@@ -175,6 +177,19 @@ public class MoHiGraphics {
   public void setLineSize(int size) {
     svgGraphics.setStroke(new BasicStroke((float)size));
   } 
+
+  /** 
+   * Rotates the canvas by (degree).
+   * Positive degree rotates canvas clockwise 
+   * Negative degree rotates canvas anticlockwise
+   * @param degree rotates the canvas by degrees
+   */
+
+  public void rotate(int degree)
+  {
+    AffineTransform rotation = AffineTransform.getRotateInstance(Math.toRadians(degree),svgGraphics.getWidth()/2,svgGraphics.getHeight()/2);
+    svgGraphics.transform(rotation);
+  }
   
   /**
    * Overlays a grid in reflex blue color.

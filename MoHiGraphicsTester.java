@@ -70,5 +70,14 @@ class MoHiGraphicsTester {
       graphics.drawSquare(50, 50, 100);
       graphics.saveToFile("testoutput/strokeSquare.svg");
 
+    // test rotate
+    graphics = new MoHiGraphics(200, 200);
+    graphics.drawSquare(50, 50, 100);
+    graphics.rotate(45);
+    graphics.drawSquare(50, 50, 100);
+    graphics.rotate(-25);
+    graphics.drawSquare(50, 50, 100);
+    graphics.saveToFile("testoutput/rotate.svg");
+
   }
 }
