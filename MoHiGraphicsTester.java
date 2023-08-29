@@ -62,6 +62,10 @@ class MoHiGraphicsTester {
     // test transparency change
 
     // test line size change
+      graphics = new MoHiGraphics(200,200);
+      graphics.setLineSize(20);
+      graphics.drawSquare(50, 50, 100);
+      graphics.saveToFile("testoutput/strokeSquare.svg");
 
   }
 }

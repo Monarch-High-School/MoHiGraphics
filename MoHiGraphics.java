@@ -142,10 +142,10 @@ public class MoHiGraphics {
   public void setTransparent(boolean transparent) {
 
   }
-  
-   /**
+ 
+ /**
    * Sets the stroke thickness
-   * The size will be set to the number of pixels specified in the parameter.
+   * @param size size of stroke in pixels.
    */
   public void setLineSize(int size) {
     svgGraphics.setStroke(new BasicStroke((float)size));
