@@ -95,7 +95,17 @@ public class MoHiGraphics {
     svgGraphics.drawPolygon(xCoords,yCoords,3);
 
   }
-
+  /**
+  * Draws a regular pentagon: so, the shape has 5 equal sides and 5 
+  * interior angles, each with a measure of 72 degrees
+  * @param centerX, the x-coordinate of the center of the pentagon
+  * @param centerY, the y-coordinate of the center of the pentagon
+  * @param radius, the length of the line from the center to 
+  * any point on the perimeter of the pentagon
+  * With the radius and the Math class built into 
+  * Java, the x and y values for all five vertices of the pentagon 
+  * is calculated using trig to draw a pentagon
+  */  
  public void drawPentagon(int centerX, int centerY, int radius) {
     //intialize an array that contains 5 x values at the vertices of the pentagon
     int[] pointsX = new int[5];
