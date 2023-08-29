@@ -20,8 +20,7 @@ public class MoHiGraphics {
 
   /** instance of JFree's SVG Graphics library **/
   private SVGGraphics2D svgGraphics;
-  private double w;
-  private double h;
+
   /**
    * Creates a new MoHiGraphics object.
    *
@@ -93,7 +92,7 @@ public class MoHiGraphics {
   }
 
   
-  /**
+/**
  * @param x1 the x coordinate of the first point on the triangle
  * @param y1 the y coordinate of the first point on the triangle
  * @param x2 the x coordinate of the second point on the triangle
