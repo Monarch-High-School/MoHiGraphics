@@ -107,7 +107,7 @@ public class MoHiGraphics {
 
   public void rotate(int degree)
   {
-    AffineTransform rotation = AffineTransform.getRotateInstance(Math.toRadians(degree),w/2,h/2);
+    AffineTransform rotation = AffineTransform.getRotateInstance(Math.toRadians(degree),svgGraphics.getWidth()/2,svgGraphics.getHeight()/2);
     svgGraphics.transform(rotation);
   }
   
