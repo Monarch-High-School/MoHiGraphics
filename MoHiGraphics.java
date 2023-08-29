@@ -128,9 +128,20 @@ public class MoHiGraphics {
   public void drawOctagon() {
     
   }
-  
-  public void setTransparent(boolean transparent) {
 
+  /**
+   * Sets brush to transparent or opaque
+   * @param boolean to set transparency on/off
+   */
+  public void setTransparent(boolean transparent) {
+    Color col = svgGraphics.getColor();
+    int red = col.getRed();
+    int green = col.getGreen();
+    int blue = col.getBlue();
+
+    int alpha = transparent ? 0 : 255;
+    
+    svgGraphics.setColor(new Color( red, green, blue, alpha ));
   }
   
   public void setLineSize(int size) {

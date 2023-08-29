@@ -58,6 +58,11 @@ class MoHiGraphicsTester {
     // test octagon
 
     // test transparency change
+    graphics = new MoHiGraphics(200, 200);
+    graphics.drawCircle(100, 100, 50);
+    graphics.setTransparent(true);
+    graphics.drawCircle(50, 50, 50);
+    graphics.saveToFile("testoutput/transparency.svg");
 
     // test line size change
 
