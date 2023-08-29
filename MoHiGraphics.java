@@ -30,8 +30,6 @@ public class MoHiGraphics {
    */
   public MoHiGraphics(double width, double height) {
       // set up svggraphics object
-    w = width;
-    h = height;
     svgGraphics = new SVGGraphics2D(width, height);
 
       // set default stroke to 1
