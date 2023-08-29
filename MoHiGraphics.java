@@ -128,9 +128,14 @@ public class MoHiGraphics {
 
   }
   
+/**
+   * Sets the stroke thickness
+   * @param size size of stroke in pixels.
+   */
   public void setLineSize(int size) {
-    
+    svgGraphics.setStroke(new BasicStroke((float)size));
   } 
+
   
   /**
    * Overlays a grid in reflex blue color.
