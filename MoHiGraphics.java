@@ -71,8 +71,18 @@ public class MoHiGraphics {
     svgGraphics.drawPolygon(xCoords, yCoords, 4);
   }
 
+  /** 
+   * Draws a rectangle with the top left corner at leftTopX, rightTopX with width and height.
+   * @param leftTopX the x coordinate of the top left corner of the rectangle
+   * @param leftTopY the y coordinate of the top left corner of the rectangle
+   * @param width the width of the rectangle
+   * @param height the height of the rectangle
+   */
   public void drawRectangle(int leftTopX, int leftTopY, int width, int height) {
-   
+    int[] xCoords = new int[]{leftTopX, leftTopX+width, leftTopX+width, leftTopX};
+    int[] yCoords = new int[]{leftTopY, leftTopY, leftTopY+height, leftTopY+height};
+
+    svgGraphics.drawPolygon(xCoords, yCoords, 4);
   }
 
   
@@ -120,6 +130,11 @@ public class MoHiGraphics {
     svgGraphics.drawPolygon(xPts, yPts, 6);
   }
 
+   public void arc(int x, int y, int width, int height, int startAngle, int arcAngle)
+  {
+    svgGraphics.drawArc(x,y,width,height,startAngle,arcAngle);
+  }
+  
   public void drawOctagon() {
     
   }
@@ -127,15 +142,14 @@ public class MoHiGraphics {
   public void setTransparent(boolean transparent) {
 
   }
-  
-/**
+ 
+ /**
    * Sets the stroke thickness
    * @param size size of stroke in pixels.
    */
   public void setLineSize(int size) {
     svgGraphics.setStroke(new BasicStroke((float)size));
   } 
-
   
   /**
    * Overlays a grid in reflex blue color.
