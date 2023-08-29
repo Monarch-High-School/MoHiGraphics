@@ -143,8 +143,12 @@ public class MoHiGraphics {
 
   }
   
+   /**
+   * Sets the stroke thickness
+   * The size will be set to the number of pixels specified in the parameter.
+   */
   public void setLineSize(int size) {
-    
+    svgGraphics.setStroke(new BasicStroke((float)size));
   } 
   
   /**
