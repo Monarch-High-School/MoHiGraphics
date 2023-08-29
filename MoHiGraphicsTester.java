@@ -33,8 +33,10 @@ class MoHiGraphicsTester {
     graphics.drawSquare(50, 50, 100);
     graphics.saveToFile("testoutput/square.svg");
 
-    // test rectangle
-
+      // test rectangle
+    graphics = new MoHiGraphics(200, 200);
+    graphics.drawRectangle(50, 50, 100, 50);
+    graphics.saveToFile("testoutput/rectangle.svg");
 
     // test triangle
 
