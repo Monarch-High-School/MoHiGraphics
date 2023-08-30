@@ -172,6 +172,17 @@ public class MoHiGraphics {
   public void drawOctagon() {
     
   }
+
+  /** 
+   * Draws a line between (x1, y1) and (x2, y2)
+   * @param x1 The x-coordinate of the starting point
+   * @param y1 The y-coordinate of the starting point
+   * @param x2 The x-coordinate of the ending point
+   * @param y2 The y-coordinate of the ending point
+   */
+  public void drawLine(int x1, int y1, int x2, int y2) {
+    svgGraphics.drawLine(x1, y1, x2, y2);
+  }
   
   public void setTransparent(boolean transparent) {
 
