@@ -39,7 +39,10 @@ class MoHiGraphicsTester {
     graphics.saveToFile("testoutput/rectangle.svg");
 
     // test triangle
-
+    graphics = new MoHiGraphics(200, 200);
+    graphics.drawTriangle(50, 50, 50);
+    graphics.saveToFile("testoutput/EqTriangle.svg");
+    
     // test irregular triangle
     graphics = new MoHiGraphics(200, 200);
     graphics.drawIrregularTriangle(10, 10, 100, 50, 50, 150);
