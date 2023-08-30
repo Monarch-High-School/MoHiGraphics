@@ -86,9 +86,17 @@ public class MoHiGraphics {
     svgGraphics.drawPolygon(xCoords, yCoords, 4);
   }
 
-  
-  public void drawTriangle() {
+  /**
+   * Draws a triangle with center at (x, y) and side lengths of size
+   * @param x the x-coordinate of the center
+   * @param y the y-coordinate of the center
+   * @param size the side length of the triangle
+   */
+  public void drawTriangle(int x, int y, int size) {
+     int[] xCoords = new int[] {x-size/2, x+size/2 , x};
+    int[] yCoords = new int[] {(int)((size/2)/Math.sqrt(3)) + y, (int)((size/2)/Math.sqrt(3)) + y, (int)( y - (2*( (size/2) / (Math.sqrt(3) )))  ) };
     
+    svgGraphics.drawPolygon(xCoords, yCoords, 3);
   }
 
  /**
