@@ -164,8 +164,17 @@ public class MoHiGraphics {
     svgGraphics.drawPolygon(xPts, yPts, 6);
   }
 
-   public void arc(int x, int y, int width, int height, int startAngle, int arcAngle)
-  {
+    /**
+     * Draws an arc with the given parameters.
+     * @param x The x-coordinate of the upper left corner
+     * @param y The y-coordinate of the upper left corner
+     * @param width The width of the arc
+     * @param height The height of the arc
+     * @param startAngle the position of the arc to start at
+     * @param arcAngle the amount of the arc to draw
+     *
+     */
+   public void drawArc(int x, int y, int width, int height, int startAngle, int arcAngle) {
     svgGraphics.drawArc(x,y,width,height,startAngle,arcAngle);
   }
   
