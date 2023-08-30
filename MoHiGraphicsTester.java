@@ -60,7 +60,7 @@ class MoHiGraphicsTester {
 
     //test arc method
     graphics = new MoHiGraphics(200,200);
-    graphics.arc(100,100,50,50,0,30);
+    graphics.drawArc(100,100,50,50,0,30);
     graphics.saveToFile("testoutput/arc.svg");
     
     // test octagon
