@@ -16,6 +16,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.awt.geom.AffineTransform;
 
+
+
 public class MoHiGraphics {
 
   /** instance of JFree's SVG Graphics library **/
@@ -65,29 +67,29 @@ public class MoHiGraphics {
    * @param leftTopY the y coordinate of the upper left corner
    * @param size the size of the square
    */
-  public void drawSquare (int leftTopX, int leftTopY, int size) {
-    int[] xCoords = new int[] {leftTopX, leftTopX+size, leftTopX+size, leftTopX};
-    int[] yCoords = new int[] {leftTopY, leftTopY, leftTopY+size, leftTopY+size};
+  public void drawSquare (int x, int y, int size) {
+
+
     
-    svgGraphics.drawPolygon(xCoords, yCoords, 4);
+    
+    
   }
 
   /** 
-   * Draws a rectangle with the top left corner at leftTopX, rightTopX with width and height.
-   * @param leftTopX the x coordinate of the top left corner of the rectangle
-   * @param leftTopY the y coordinate of the top left corner of the rectangle
-   * @param width the width of the rectangle
-   * @param height the height of the rectangle
-   */
-  public void drawRectangle(int leftTopX, int leftTopY, int width, int height) {
-    int[] xCoords = new int[]{leftTopX, leftTopX+width, leftTopX+width, leftTopX};
-    int[] yCoords = new int[]{leftTopY, leftTopY, leftTopY+height, leftTopY+height};
-
-    svgGraphics.drawPolygon(xCoords, yCoords, 4);
+   * Draws an equilateral triangle with center at (x,y).
+   * @param x x-coordinate of the center
+   * @param y y-coordinate of the center
+   * @param size the size of the traingle sides
+   */  
+  public void drawTriangle(int x, int y, int size) {
+    int[] xCoords = new int[] {x-size/2, x+size/2 , x};
+    int[] yCoords = new int[] {(int)((size/2)/Math.sqrt(3)) + y, (int)((size/2)/Math.sqrt(3)) + y, (int)( y - (2*( (size/2) / (Math.sqrt(3) )))  ) };
+    
+    svgGraphics.drawPolygon(xCoords, yCoords, 3);
   }
 
   
-  public void drawTriangle() {
+  public void drawIreggTriangle() {
     
   }
 
