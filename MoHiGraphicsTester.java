@@ -56,7 +56,9 @@ class MoHiGraphicsTester {
     graphics.saveToFile("testoutput/arc.svg");
     
     // test octagon
-
+    graphics = new MoHiGraphics(200, 200);
+    graphics.drawOctagon(100, 100, 50);
+    graphics.saveToFile("testoutput/octagon.svg");
     // test transparency change
 
     // test line size change
