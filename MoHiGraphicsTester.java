@@ -88,5 +88,10 @@ class MoHiGraphicsTester {
     graphics.drawSquare(50, 50, 100);
     graphics.saveToFile("testoutput/rotate.svg");
 
+		// test clearCanvas
+		graphics.clearCanvas();
+		graphics.saveToFile("testoutput/clearCanvas.svg");
+		
+
   }
 }
