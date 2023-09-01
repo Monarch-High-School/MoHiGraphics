@@ -97,7 +97,7 @@ class MoHiGraphicsTester {
 		
     // test text
     graphics = new MoHiGraphics(200, 200);
-    graphics.text("Hello",50,50,50, new int[] {255,0,0},3,"Serif");
+    graphics.drawText("Hello",100, 100,12, 0, 0, 0, MoHiGraphics.BOLD_ITALIC,"Serif");
     graphics.saveToFile("testoutput/text.svg");
 
   }
