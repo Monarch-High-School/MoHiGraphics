@@ -20,13 +20,6 @@ public class MoHiGraphics {
 
   /** instance of JFree's SVG Graphics library **/
   private SVGGraphics2D svgGraphics;
-
-	// width of the canvas
-	private double width;
-
-	// height of the canvas
-	
-	private double height;
 	
   /**
    * Creates a new MoHiGraphics object.
@@ -40,12 +33,6 @@ public class MoHiGraphics {
 
       // set default stroke to 1
     svgGraphics.setStroke(new BasicStroke(1.0f));
-
-		// storing width
-		this.width = width;
-
-		// storing height
-		this.height = height;
   }
 
   /** 
@@ -229,9 +216,9 @@ public class MoHiGraphics {
   }
  /**
   * Clears Canvas
- **/
-	public void clearCanvas(){
-	svgGraphics = new SVGGraphics2D(width, height);	
+  */
+	public void clearCanvas() {
+	 svgGraphics = new SVGGraphics2D(svgGraphics.getWidth(), svgGraphics.getHeight());	
 	}
 	
  /**
