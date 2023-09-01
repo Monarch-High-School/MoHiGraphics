@@ -20,7 +20,14 @@ public class MoHiGraphics {
 
   /** instance of JFree's SVG Graphics library **/
   private SVGGraphics2D svgGraphics;
-	
+
+  /** font styles **/
+  public static final int PLAIN = 0;
+  public static final int BOLD = 1;
+  public static final int ITALIC = 2;
+  public static final int BOLD_ITALIC = 3;
+  
+  
   /**
    * Creates a new MoHiGraphics object.
    *
@@ -243,26 +250,24 @@ public class MoHiGraphics {
   }
 
   /** 
-   * Adds text at (x, y).
+   * Adds text at (x, y) for the bottom left corner.
    * @param txt the string to be drawn 
    * @param x the x coordinate of the leftmost character baseline
    * @param y the y coordinate of the leftmost character baseline
    * @param size the size of the text
-   * @param colorRGB the color of the text in RGB values 
-   * @param style the the style of the text (plain,bold,italic)
-   * (0) represents plain 
-   * (1) represents bold 
-   * (2) represents italic
-   * (3) represents bold + italic
+   * @param red the red value of the text color (0-255)
+   * @param green the green value of the text color (0-255)
+   * @param blue the blue value of the text color (0-255)
+   * @param style the the style of the text (plain,bold,italic) uses the public static constants of the class
    * @param font the font of the text 
    * Fonts that work are: "Dialog", "DialogInput", "Monospaced", "SansSerif", "Serif"
 
    */
 
-  public void text(String txt, int x, int y, int size, int [] colorRGB, int style, String font)
+  public void drawText(String txt, int x, int y, int size, int red, int green, int blue, int style, String font)
   {
     svgGraphics.setFont(new Font(font,style,size));
-    svgGraphics.setColor(new Color(colorRGB[0],colorRGB[1],colorRGB[2]));
+    svgGraphics.setColor(new Color(red, green, blue));
     svgGraphics.drawString(txt,x,y);
   }
   
