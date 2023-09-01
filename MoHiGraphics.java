@@ -178,8 +178,26 @@ public class MoHiGraphics {
     svgGraphics.drawArc(x,y,width,height,startAngle,arcAngle);
   }
   
-  public void drawOctagon() {
+   /**
+    * Draws an octagon at centerX, centerY, with the distance to the vertex.
+    * @param centerX the x-coordinate of the center
+    * @param centerY the y-coordinate fo the center
+    * @param distToVertex the distance from the center to the vertex
+    */
+   public void drawOctagon(int centerX, int centerY, int distToVertex)  {
+      double angleIncrement = 2 * Math.PI / 8; // Angle between each vertex
+      int[] xPts = new int[8];
+      int[] yPts = new int[8];
     
+      for (int i = 0; i < 8; i++) {
+          double angle = i * angleIncrement;
+          int x = (int) (centerX + distToVertex * Math.cos(angle));
+          int y = (int) (centerY + distToVertex * Math.sin(angle));
+          xPts[i] = x;
+          yPts[i] = y;
+      }
+    
+      svgGraphics.drawPolygon(xPts, yPts, 8);
   }
 
   /** 
