@@ -217,6 +217,30 @@ public class MoHiGraphics {
     AffineTransform rotation = AffineTransform.getRotateInstance(Math.toRadians(degree),svgGraphics.getWidth()/2,svgGraphics.getHeight()/2);
     svgGraphics.transform(rotation);
   }
+
+  /** 
+   * Adds text at (x, y).
+   * @param txt the string to be drawn 
+   * @param x the x coordinate of the leftmost character baseline
+   * @param y the y coordinate of the leftmost character baseline
+   * @param size the size of the text
+   * @param colorRGB the color of the text in RGB values 
+   * @param style the the style of the text (plain,bold,italic)
+   * (0) represents plain 
+   * (1) represents bold 
+   * (2) represents italic
+   * (3) represents bold + italic
+   * @param font the font of the text 
+   * Fonts that work are: "Dialog", "DialogInput", "Monospaced", "SansSerif", "Serif"
+
+   */
+
+  public void text(String txt, int x, int y, int size, int [] colorRGB, int style, String font)
+  {
+    svgGraphics.setFont(new Font(font,style,size));
+    svgGraphics.setColor(new Color(colorRGB[0],colorRGB[1],colorRGB[2]));
+    svgGraphics.drawString(txt,x,y);
+  }
   
   /**
    * Overlays a grid in reflex blue color.

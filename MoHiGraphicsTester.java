@@ -88,5 +88,11 @@ class MoHiGraphicsTester {
     graphics.drawSquare(50, 50, 100);
     graphics.saveToFile("testoutput/rotate.svg");
 
+
+    // test text
+    graphics = new MoHiGraphics(200, 200);
+    graphics.text("Hello",50,50,50, new int[] {255,0,0},3,"Serif");
+    graphics.saveToFile("testoutput/text.svg");
+
   }
 }
