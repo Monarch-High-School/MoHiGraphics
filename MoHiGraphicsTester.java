@@ -33,18 +33,26 @@ class MoHiGraphicsTester {
     graphics.drawSquare(50, 50, 100);
     graphics.saveToFile("testoutput/square.svg");
 
-    // test rectangle
-
+      // test rectangle
+    graphics = new MoHiGraphics(200, 200);
+    graphics.drawRectangle(50, 50, 100, 50);
+    graphics.saveToFile("testoutput/rectangle.svg");
 
     // test triangle
-
+    graphics = new MoHiGraphics(200, 200);
+    graphics.drawTriangle(50, 50, 50);
+    graphics.saveToFile("testoutput/EqTriangle.svg");
+    
     // test irregular triangle
     graphics = new MoHiGraphics(200, 200);
     graphics.drawIrregularTriangle(10, 10, 100, 50, 50, 150);
     graphics.saveToFile("testoutput/irregularTriangle.svg");
 
     // test pentagon
-
+    graphics = new MoHiGraphics(200, 200);
+    graphics.drawPentagon(100, 100, 50);
+    graphics.saveToFile("testoutput/pentagon.svg");
+    
     // test hexagon
     graphics = new MoHiGraphics(200,200);
     graphics.drawHexagon(100,100,50);
@@ -52,16 +60,42 @@ class MoHiGraphicsTester {
 
     //test arc method
     graphics = new MoHiGraphics(200,200);
-    graphics.arc(100,100,50,50,0,30);
+    graphics.drawArc(100,100,50,50,0,30);
     graphics.saveToFile("testoutput/arc.svg");
     
     // test octagon
     graphics = new MoHiGraphics(200, 200);
     graphics.drawOctagon(100, 100, 50);
     graphics.saveToFile("testoutput/octagon.svg");
+
+    // test drawLine
+    graphics = new MoHiGraphics(200, 200);
+    graphics.drawLine(0, 0, 200, 200);
+    graphics.drawLine(0, 200, 200, 0);
+    graphics.saveToFile("testoutput/lines.svg");
+    
     // test transparency change
 
     // test line size change
+    graphics = new MoHiGraphics(200,200);
+    graphics.setLineSize(20);
+    graphics.drawSquare(50, 50, 100);
+    graphics.saveToFile("testoutput/strokeSquare.svg");
+
+    // test rotate
+    graphics = new MoHiGraphics(200, 200);
+    graphics.drawSquare(50, 50, 100);
+    graphics.rotate(45);
+    graphics.drawSquare(50, 50, 100);
+    graphics.rotate(-25);
+    graphics.drawSquare(50, 50, 100);
+    graphics.saveToFile("testoutput/rotate.svg");
+
+
+    // test text
+    graphics = new MoHiGraphics(200, 200);
+    graphics.text("Hello",50,50,50, new int[] {255,0,0},3,"Serif");
+    graphics.saveToFile("testoutput/text.svg");
 
   }
 }
