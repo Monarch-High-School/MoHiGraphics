@@ -191,8 +191,26 @@ public class MoHiGraphics {
     svgGraphics.drawArc(x,y,width,height,startAngle,arcAngle);
   }
   
-  public void drawOctagon() {
+   /**
+    * Draws an octagon at centerX, centerY, with the distance to the vertex.
+    * @param centerX the x-coordinate of the center
+    * @param centerY the y-coordinate fo the center
+    * @param distToVertex the distance from the center to the vertex
+    */
+   public void drawOctagon(int centerX, int centerY, int distToVertex)  {
+      double angleIncrement = 2 * Math.PI / 8; // Angle between each vertex
+      int[] xPts = new int[8];
+      int[] yPts = new int[8];
     
+      for (int i = 0; i < 8; i++) {
+          double angle = i * angleIncrement;
+          int x = (int) (centerX + distToVertex * Math.cos(angle));
+          int y = (int) (centerY + distToVertex * Math.sin(angle));
+          xPts[i] = x;
+          yPts[i] = y;
+      }
+    
+      svgGraphics.drawPolygon(xPts, yPts, 8);
   }
 
   /** 
@@ -235,6 +253,30 @@ public class MoHiGraphics {
   {
     AffineTransform rotation = AffineTransform.getRotateInstance(Math.toRadians(degree),svgGraphics.getWidth()/2,svgGraphics.getHeight()/2);
     svgGraphics.transform(rotation);
+  }
+
+  /** 
+   * Adds text at (x, y).
+   * @param txt the string to be drawn 
+   * @param x the x coordinate of the leftmost character baseline
+   * @param y the y coordinate of the leftmost character baseline
+   * @param size the size of the text
+   * @param colorRGB the color of the text in RGB values 
+   * @param style the the style of the text (plain,bold,italic)
+   * (0) represents plain 
+   * (1) represents bold 
+   * (2) represents italic
+   * (3) represents bold + italic
+   * @param font the font of the text 
+   * Fonts that work are: "Dialog", "DialogInput", "Monospaced", "SansSerif", "Serif"
+
+   */
+
+  public void text(String txt, int x, int y, int size, int [] colorRGB, int style, String font)
+  {
+    svgGraphics.setFont(new Font(font,style,size));
+    svgGraphics.setColor(new Color(colorRGB[0],colorRGB[1],colorRGB[2]));
+    svgGraphics.drawString(txt,x,y);
   }
   
   /**

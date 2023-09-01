@@ -64,6 +64,9 @@ class MoHiGraphicsTester {
     graphics.saveToFile("testoutput/arc.svg");
     
     // test octagon
+    graphics = new MoHiGraphics(200, 200);
+    graphics.drawOctagon(100, 100, 50);
+    graphics.saveToFile("testoutput/octagon.svg");
 
     // test drawLine
     graphics = new MoHiGraphics(200, 200);
@@ -74,10 +77,10 @@ class MoHiGraphicsTester {
     // test transparency change
 
     // test line size change
-      graphics = new MoHiGraphics(200,200);
-      graphics.setLineSize(20);
-      graphics.drawSquare(50, 50, 100);
-      graphics.saveToFile("testoutput/strokeSquare.svg");
+    graphics = new MoHiGraphics(200,200);
+    graphics.setLineSize(20);
+    graphics.drawSquare(50, 50, 100);
+    graphics.saveToFile("testoutput/strokeSquare.svg");
 
     // test rotate
     graphics = new MoHiGraphics(200, 200);
@@ -92,6 +95,10 @@ class MoHiGraphicsTester {
 		graphics.clearCanvas();
 		graphics.saveToFile("testoutput/clearCanvas.svg");
 		
+    // test text
+    graphics = new MoHiGraphics(200, 200);
+    graphics.text("Hello",50,50,50, new int[] {255,0,0},3,"Serif");
+    graphics.saveToFile("testoutput/text.svg");
 
   }
 }
